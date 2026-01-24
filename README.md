@@ -1,11 +1,8 @@
-# steam-lua-manifestor
+# LUA Manifest Download/Generate
 
 LUA Manifest Download/Generate
 Enter the game's AppID. If a .zip archive containing a README exists, it will be prioritized; otherwise, the raw .lua manifest file is served.
 Note: Generated links are temporary and expire within minutes.
-
-**Author:** mPhpMaster  
-**Repo:** <https://github.com/mPhpMaster/steam-lua-manifestor>
 
 ## Support
 
