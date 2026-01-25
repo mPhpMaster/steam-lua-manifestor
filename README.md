@@ -109,6 +109,12 @@ python appid.py
 
 ---
 
+## 🔗 Additional Tools
+
+- **DLC Unlocker**: [Download](https://drive.google.com/file/d/1V1FS9N1JQa9wktJFTdwLtRp_H4ztR_Km/view?usp=sharing)
+
+---
+
 ## ❤️ Support
 
 If this tool helped you:
