@@ -45,7 +45,7 @@ Contains:
 
 ### Steps
 
-1. Install **SteamTools** from its [official website](https://steamtools.net/download.html).
+1. Install **SteamTools** from its [official website](https://steamtools.net/download).
 2. Find a game on [**SteamDB**](https://steamdb.info/) or [**Steam**](https://store.steampowered.com/) and copy its **AppID** or **The store page URL**.
 3. Paste the AppID/URL into this tool.
 4. Download the provided file.
