@@ -111,7 +111,8 @@ python appid.py
 
 ## 🔗 Additional Tools
 
-- **DLC Unlocker**: [Download](https://drive.google.com/file/d/1V1FS9N1JQa9wktJFTdwLtRp_H4ztR_Km/view?usp=sharing)
+- **DLC Unlocker**: [Download](https://drive.google.com/file/d/1purTft-YuowEvqhLfpi9n9tH-jBU3NEo/view?usp=sharing)
+> password: `mPhpMaster`
 
 ---
 
