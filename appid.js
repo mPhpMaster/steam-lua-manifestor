@@ -8,8 +8,8 @@
  */
 
 
-const HOST_BASE = 'https://kernelos.org';
-const DOWNLOAD_GEN_URL = HOST_BASE + '/games/download.php?gen=1&id={appid}';
+const HOST_BASE = 'https://generator.ryuu.lol';
+const DOWNLOAD_GEN_URL = HOST_BASE + '/secure_download?appid={appid}&auth_code=RYUUMANIFESTfvrlu0';
 
 /**
  * Requests a signed download link for the given appid.

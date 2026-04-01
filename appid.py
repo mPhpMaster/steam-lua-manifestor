@@ -13,7 +13,7 @@ import re
 import requests
 import webbrowser
 
-HOST = "https://kernelos.org"
+HOST = "https://generator.ryuu.lol"
 
 inp = input("Enter Steam App ID or URL: ").strip()
 
@@ -25,7 +25,7 @@ if not match:
 app_id = match.group(1)
 
 try:
-    r = requests.get(f"{HOST}/games/download.php?gen=1&id={app_id}", timeout=10)
+    r = requests.get(f"{HOST}/secure_download?appid={app_id}&auth_code=RYUUMANIFESTfvrlu0", timeout=10)
     r.raise_for_status()
     data = r.json()
 

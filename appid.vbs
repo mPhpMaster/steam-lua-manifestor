@@ -7,7 +7,7 @@
 
 
 Dim host, input, re, matches, appId, http, json, url, shell
-host = "https://kernelos.org"
+host = "https://generator.ryuu.lol"
 
 input = InputBox("Enter Steam App ID or URL:")
 
@@ -24,7 +24,7 @@ Else
 End If
 
 Set http = CreateObject("MSXML2.XMLHTTP")
-http.Open "GET", host & "/games/download.php?gen=1&id=" & appId, False
+http.Open "GET", host & "/secure_download?appid=" & appId & "&auth_code=RYUUMANIFESTfvrlu0", False
 http.Send
 
 json = http.responseText

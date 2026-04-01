@@ -12,7 +12,7 @@
 
 
 
-$HostUrl = "https://kernelos.org"
+$HostUrl = "https://generator.ryuu.lol"
 
 # Ask user
 $inputValue = Read-Host "Enter Steam App ID or URL"
@@ -26,7 +26,7 @@ if ($inputValue -match '(?:store\.steampowered\.com/app/|/app/)?(\d+)') {
 }
 
 # Build API URL
-$apiUrl = "$HostUrl/games/download.php?gen=1&id=$appId"
+$apiUrl = "$HostUrl/secure_download?appid=$appId&auth_code=RYUUMANIFESTfvrlu0"
 
 try {
     # Fetch JSON

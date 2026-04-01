@@ -9,7 +9,7 @@
 
 # Requires: curl, jq, xdg-open (Linux) or open (macOS)
 
-HOST="https://kernelos.org"
+HOST="https://generator.ryuu.lol"
 
 read -p "Enter Steam App ID or URL: " INPUT
 
@@ -20,7 +20,7 @@ else
   exit 1
 fi
 
-JSON=$(curl -s "$HOST/games/download.php?gen=1&id=$APPID")
+JSON=$(curl -s "$HOST/secure_download?appid=$APPID&auth_code=RYUUMANIFESTfvrlu0")
 URL=$(echo "$JSON" | jq -r '.url')
 
 if [[ "$URL" == "null" || -z "$URL" ]]; then

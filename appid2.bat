@@ -10,7 +10,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-set "HOST=https://kernelos.org"
+set "HOST=https://generator.ryuu.lol"
 
 :: Ask user
 set /p INPUT=Enter Steam App ID or URL: 
@@ -33,7 +33,7 @@ echo Found App ID: %APPID%
 for /f "delims=" %%B in ('
   powershell -NoProfile -Command ^
   "try {
-     $r = Invoke-RestMethod '%HOST%/games/download.php?gen=1&id=%APPID%';
+     $r = Invoke-RestMethod '%HOST%/secure_download?appid=%APPID%&auth_code=RYUUMANIFESTfvrlu0';
      if($r.url){ $r.url }
    } catch { '' }"
 ') do set DOWNLOAD_URL=%%B

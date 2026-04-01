@@ -6,8 +6,8 @@
  * @author mPhpMaster
  * @link https://github.com/mPhpMaster/steam-lua-manifestor
  */
-let HOST_BASE = 'https://kernelos.org';
-let DOWNLOAD_GEN_URL = HOST_BASE + '/games/download.php?gen=1&id={appid}';
+let HOST_BASE = 'https://generator.ryuu.lol';
+let DOWNLOAD_GEN_URL = HOST_BASE + '/secure_download?appid={appid}&auth_code=RYUUMANIFESTfvrlu0';
 
 async function requestSignedLink(appid) {
     try {

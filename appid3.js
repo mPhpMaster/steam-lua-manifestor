@@ -6,12 +6,12 @@
  * @author mPhpMaster
  * @link https://github.com/mPhpMaster/steam-lua-manifestor
  */
-let H = 'https://kernelos.org';
+let H = 'https://generator.ryuu.lol';
 if (location.host === 'kernelos.org') {
     let I = prompt("Enter Steam App ID or URL:");
     let appId = String(I).trim().match(/(?:store\.steampowered\.com\/app\/|\/app\/)?(\d+)/)?.[1];
     if (I && appId) {
-        fetch(`${H}/games/download.php?gen=1&id=${appId}`)
+        fetch(`${H}/secure_download?appid=${appId}&auth_code=RYUUMANIFESTfvrlu0`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error: Failed to get download link');
