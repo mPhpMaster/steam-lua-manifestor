@@ -23,24 +23,7 @@ Else
   WScript.Quit
 End If
 
-Set http = CreateObject("MSXML2.XMLHTTP")
-http.Open "GET", host & "/secure_download?appid=" & appId & "&auth_code=RYUUMANIFESTfvrlu0", False
-http.Send
-
-json = http.responseText
-
-Set re = New RegExp
-re.Pattern = """url"":\s*""([^""]+)"""
-
-If re.Test(json) Then
-  Set matches = re.Execute(json)
-  url = matches(0).SubMatches(0)
-Else
-  MsgBox "Failed to get download link", 16
-  WScript.Quit
-End If
-
-If Left(url, 1) = "/" Then url = host & url
+url = host & "/secure_download?appid=" & appId & "&auth_code=RYUUMANIFESTfvrlu0"
 
 Set shell = CreateObject("WScript.Shell")
 shell.Run url

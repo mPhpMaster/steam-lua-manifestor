@@ -29,25 +29,8 @@ if not defined APPID (
 
 echo Found App ID: %APPID%
 
-:: Fetch JSON and extract URL
-for /f "delims=" %%B in ('
-  powershell -NoProfile -Command ^
-  "try {
-     $r = Invoke-RestMethod '%HOST%/secure_download?appid=%APPID%&auth_code=RYUUMANIFESTfvrlu0';
-     if($r.url){ $r.url }
-   } catch { '' }"
-') do set DOWNLOAD_URL=%%B
-
-if not defined DOWNLOAD_URL (
-    echo Error: Failed to get download link
-    pause
-    exit /b
-)
-
-:: Handle relative URLs
-if "%DOWNLOAD_URL:~0,1%"=="/" (
-    set DOWNLOAD_URL=%HOST%%DOWNLOAD_URL%
-)
+:: Build download URL
+set DOWNLOAD_URL=%HOST%/secure_download?appid=%APPID%&auth_code=RYUUMANIFESTfvrlu0
 
 echo Opening download link...
 start "" "%DOWNLOAD_URL%"

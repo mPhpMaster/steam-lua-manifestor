@@ -10,7 +10,6 @@ Repo: https://github.com/mPhpMaster/steam-lua-manifestor
 
 # pip install requests
 import re
-import requests
 import webbrowser
 
 HOST = "https://generator.ryuu.lol"
@@ -24,19 +23,6 @@ if not match:
 
 app_id = match.group(1)
 
-try:
-    r = requests.get(f"{HOST}/secure_download?appid={app_id}&auth_code=RYUUMANIFESTfvrlu0", timeout=10)
-    r.raise_for_status()
-    data = r.json()
+url = f"{HOST}/secure_download?appid={app_id}&auth_code=RYUUMANIFESTfvrlu0"
 
-    url = data.get("url")
-    if not url:
-        raise Exception
-
-    if url.startswith("/"):
-        url = HOST + url
-
-    webbrowser.open(url)
-
-except Exception:
-    print("Error: Failed to get download link")
+webbrowser.open(url)

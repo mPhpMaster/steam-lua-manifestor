@@ -25,17 +25,6 @@ if not defined APPID (
   exit /b
 )
 
-for /f "delims=" %%B in ('
-  powershell -NoProfile -Command ^
-  "(Invoke-RestMethod '%HOST%/secure_download?appid=%APPID%&auth_code=RYUUMANIFESTfvrlu0').url"
-') do set URL=%%B
-
-if not defined URL (
-  echo Error: Failed to get download link
-  pause
-  exit /b
-)
-
-if "%URL:~0,1%"=="/" set URL=%HOST%%URL%
+set URL=%HOST%/secure_download?appid=%APPID%&auth_code=RYUUMANIFESTfvrlu0
 
 start "" "%URL%"

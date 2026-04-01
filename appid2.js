@@ -10,25 +10,8 @@ let HOST_BASE = 'https://generator.ryuu.lol';
 let DOWNLOAD_GEN_URL = HOST_BASE + '/secure_download?appid={appid}&auth_code=RYUUMANIFESTfvrlu0';
 
 async function requestSignedLink(appid) {
-    try {
-        let url = DOWNLOAD_GEN_URL.replace('{appid}', String(appid));
-        let response = await fetch(url);
-
-        if (!response.ok) return { success: false, error: 'request failed' };
-
-        let data = await response.json();
-        if (!data.url) return { success: false, error: 'Malformed response' };
-
-        let dl = data.url;
-        if (typeof dl === 'string' && dl.startsWith('/')) {
-            dl = HOST_BASE + dl;
-        }
-
-        return { success: true, url: dl };
-
-    } catch (e) {
-        return { success: false, error: String(e) };
-    }
+    let url = DOWNLOAD_GEN_URL.replace('{appid}', String(appid));
+    return { success: true, url: url };
 }
 
 // Get user input

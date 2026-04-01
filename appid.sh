@@ -20,14 +20,6 @@ else
   exit 1
 fi
 
-JSON=$(curl -s "$HOST/secure_download?appid=$APPID&auth_code=RYUUMANIFESTfvrlu0")
-URL=$(echo "$JSON" | jq -r '.url')
-
-if [[ "$URL" == "null" || -z "$URL" ]]; then
-  echo "Error: Failed to get download link"
-  exit 1
-fi
-
-[[ "$URL" == /* ]] && URL="$HOST$URL"
+URL="$HOST/secure_download?appid=$APPID&auth_code=RYUUMANIFESTfvrlu0"
 
 xdg-open "$URL" 2>/dev/null || open "$URL"

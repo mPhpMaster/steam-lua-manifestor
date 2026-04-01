@@ -28,24 +28,7 @@ if ($inputValue -match '(?:store\.steampowered\.com/app/|/app/)?(\d+)') {
 # Build API URL
 $apiUrl = "$HostUrl/secure_download?appid=$appId&auth_code=RYUUMANIFESTfvrlu0"
 
-try {
-    # Fetch JSON
-    $response = Invoke-RestMethod -Uri $apiUrl -Method Get
+$downloadUrl = $apiUrl
 
-    if ($response.url) {
-        $downloadUrl = $response.url
-
-        # Handle relative URLs
-        if ($downloadUrl.StartsWith("/")) {
-            $downloadUrl = $HostUrl + $downloadUrl
-        }
-
-        Write-Host "Opening download link..."
-        Start-Process $downloadUrl
-    } else {
-        Write-Host "Error: Download URL not found in response" -ForegroundColor Red
-    }
-}
-catch {
-    Write-Host "Error: Failed to get download link" -ForegroundColor Red
-}
+Write-Host "Opening download link..."
+Start-Process $downloadUrl
